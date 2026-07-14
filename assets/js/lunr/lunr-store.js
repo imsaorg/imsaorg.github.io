@@ -14,12 +14,18 @@ var store = [{
         "title": "welcome to imsa, here",
         "excerpt":"Hey there blud!  ","categories": [],
         "tags": ["Article"],
-        "url": "/events/2026/07/welcome-zu-imsa-hehe",
+        "url": "/welcome-zu-imsa-hehe/",
         "teaser": null
       },{
         "title": "KNRUHS is down again",
-        "excerpt":"whens teh website gonna go up, idk  ","categories": [],
+        "excerpt":"whens teh website gonna go up, idk I wonder whats gonna happen next, ayyy  ","categories": [],
         "tags": [],
         "url": "/announcements/2026/07/knruhs-is-down-again",
+        "teaser": null
+      },{
+        "title": "Starting New Study Circles!",
+        "excerpt":"We shall be having daily study sessions of about 1-3 hrs Inshallah. For boys, there shall be pilot venue arrangements of offline venues. For girls, online Zoom groups shall be help. Ebst of luck.  ","categories": [],
+        "tags": [],
+        "url": "/starting-new-study-circles/",
         "teaser": null
       }]
