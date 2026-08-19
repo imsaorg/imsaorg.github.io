@@ -1,403 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IMSA</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
-  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
-  Copyright 2024-2026 iBug - ibugone.com | @iBug
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-
-<html lang="en-US" class="no-js" dir="ltr">
-  <head>
-    
-<meta charset="utf-8">
-
-
-<!-- begin _includes/seo.html --><title>IMSA</title>
-<meta name="description" content="Guided by faith, driven by service">
-
-
-  <meta name="author" content="IMSA">
-  
-
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="IMSA">
-<meta property="og:title" content="IMSA">
-<meta property="og:url" content="htttps://imsaorg.github.io/">
-
-
-  <meta property="og:description" content="Guided by faith, driven by service">
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-<link rel="canonical" href="htttps://imsaorg.github.io/">
-
-
-
-
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-    "name": "IMSA",
-    "url": "htttps://imsaorg.github.io/"
+body {
+    margin: 0; padding: 0%; border: 0;
+    background-color: #073063;
 }
-</script>
 
+.topnav {
+  overflow: hidden;
+  background-color: #073063;
+}
 
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
+.topnav .icon {
+  display: none;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
 
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
 
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
+.topnav a:hover {
+  background-color:#073063;
+  color: white;
+}
 
-<!-- end _includes/seo.html -->
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-  
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    
-<nav class="skip-links" aria-label="Skip links">
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    
-
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive  {float: none;}
+  .topnav.responsive  {position: relative;}
+  .topnav.responsive  {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+section {
+    border: 0; margin: 0px;
+    padding: 80px;
+    min-height: 300px;
+}
+section:nth-child(2n){
+    background: aliceblue;
+    color: #073063;
+}
+section:nth-child(2n+1){
+    background:#073063;
+    color:aliceblue;
+}
+.segmentprimum {
+    display: flex;
+}
+.segmentprimum div{
+    width: 50%;
+}
+.segmentprimum .left{
+    font-size: 12vh;
+}
+.left img{
+    width: 12.5vh;
+}
+</style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+       
+        <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="/announcements/">Announcements</a>
+        <a href="/events/">Events</a>
+        <a href="/resources/">Resources</a>
+        <a href="/cadre/">Cadre</a>
+        <a href="/join/">Join Us</a>
+        <a href="javascript:void(0);" style="font-size:24px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <section>
+            <div class="segmentprimum">
+                <div class="left">IMSA<br><img src="/assets/images/logo512x.png" ></div>
+                <div class="second">
+                <p>Guided by faith,<br> Driven by Service</p>
+                <p>Here at IMSA, we </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Recusandae, facilis voluptatibus. Ea consequatur mollitia, perferendis ipsum rem doloremque hic cum deserunt odio nisi aliquam saepe incidunt distinctio earum totam voluptate eum magni illum soluta aperiam sed omnis accusantium.</p>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Nostrum inventore, amet consequatur assumenda ipsa maxime ratione vitae repellendus nihil ea facilis unde odit omnis voluptate ut eveniet aliquam velit? Veritatis enim eum commodi deserunt perspiciatis voluptate eveniet optio.</p>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Sapiente repudiandae autem atque qui laudantium assumenda a vel tenetur at, corporis alias velit expedita, amet necessitatibus. Ex id veniam cumque nam, repellendus corrupti blanditiis dignissimos pariatur quae cum quo?</p>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Aspernatur ea nesciunt numquam ipsa, ut eligendi. Doloremque dolore eveniet minus saepe praesentium perferendis corrupti, tempora animi enim officia, harum laboriosam alias. Quidem, numquam similique tempora dolorem optio fugit molestiae.</p>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Quaerat, iusto itaque at velit nam, incidunt recusandae ea soluta repellendus corporis voluptas eum ab, libero repellat minima optio? Perferendis totam voluptate explicabo natus quisquam suscipit sed accusamus voluptas quasi.</p>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Quos praesentium dicta sapiente ipsum eos fugit maiores eum fugiat unde. Quam perspiciatis tenetur repudiandae distinctio aut tempora, vel animi minus aliquam molestias sequi neque, aperiam quia autem excepturi beatae.</p>
+        </section>
+        <section>
+            <div class="segment"></div>
+            <p>Iusto aliquam, veritatis illum molestias mollitia eius consectetur. Explicabo possimus inventore rerum repellat illo voluptas recusandae distinctio. Pariatur, laborum vitae? Doloremque nesciunt obcaecati ut molestias necessitatibus vitae consequuntur iste excepturi!</p>
+        </section>
         
-        <a class="site-title" href="/">
-          IMSA
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a
-                href="/"
-                
-                
-              >Home</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="/announcements/"
-                
-                
-              >Announcements</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="/events/"
-                
-                
-              >Events</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="/cadre/"
-                
-                
-              >Cadre</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="/studyresources/"
-                
-                
-              >Resources</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="/join/"
-                
-                
-              >Join Us</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-
-
-
-
-
-<div id="main" role="main">
-  
-
-  <div class="sidebar sticky">
-  
-
-
-
-<div itemscope itemtype="https://schema.org/Person" class="h-card">
-
-  
-    <div class="author__avatar">
-      <a href="htttps://imsaorg.github.io/">
-        <img src="/assets/images/logo512x.png" alt="IMSA" itemprop="image" class="u-photo">
-      </a>
-    </div>
-  
-
-  <div class="author__content">
-    <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="htttps://imsaorg.github.io/" itemprop="url">IMSA</a>
-    </h3>
-    
-      <div class="author__bio p-note" itemprop="description">
-        <p>Guided by faith, driven by service.</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">TG, India.</span>
-        </li>
-      
-
-      
-        
-          
-            <li><a href="https://www.youtube.com/@IMSAOfficial99" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-youtube-play" aria-hidden="true"></i><span class="label">Youtube</span></a></li>
-          
-        
-          
-            <li><a href="https://www.linkedin.com/company/imsa-initiative-of-medicos-for-service-and-academics" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-square-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
-          
-        
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  
-  </div>
-
-
-
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    
-    
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          
-          
-
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-        Welcome to this page!
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-  
-
-  
-
-
-        
-
-
-
-      </footer>
-
-      
-
-      
-
-
-    </div>
-
-    
-  </article>
-
-  
-  
-</div>
-
-      
-    </div>
-
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-<div style="font-size: 16px"> Made by Technical Team for IMSA </div>
-<!-- end custom footer snippets -->
-        
-
-
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    
-      <li><strong>Follow:</strong></li>
-    
-
-    
-      
-        
-          <li><a href="www.youtube.com/@IMSAOfficial99" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> YouTube</a></li>
-        
-      
-        
-          <li><a href="https://www.linkedin.com/company/imsa-initiative-of-medicos-for-service-and-academics" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> :LinkedIn</a></li>
-        
-      
-    
-
-    
-  </ul>
-</div>
-
-
-<div class="page__footer-copyright">&copy; 2023 - 2026 <a href="htttps://imsaorg.github.io">IMSA</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-      </footer>
-    </div>
-
-    
-
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-  </body>
+        <script>
+            function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+        </script>
+    </body>
 </html>
