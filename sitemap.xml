@@ -21,6 +21,13 @@
 <lastmod>2026-08-19T00:00:00+05:30</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/special-children-school-visit-2026/</loc>
+<lastmod>2026-09-23T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/alternate/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/announcements/</loc>
 </url>
 <url>
@@ -37,6 +44,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
-<lastmod>2026-08-20T04:03:13+05:30</lastmod>
+<lastmod>2026-09-23T01:21:00+05:30</lastmod>
 </url>
 </urlset>
