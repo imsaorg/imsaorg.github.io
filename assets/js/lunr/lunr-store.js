@@ -220,4 +220,10 @@ var store = [{
         "tags": [],
         "url": "/special-children-school-visit-2026/",
         "teaser": null
+      },{
+        "title": "IMSA Felicitation for the Oncoming 2026 Batch!",
+        "excerpt":"We are delighted to announce that this years felicitation ceremony will be conducted this November 1, 2026. There is going to be lots of amazing sguidance sessions, speeches, stalls, photo booths and best of all, fantastic food. We await you :)  ","categories": [],
+        "tags": [],
+        "url": "/imsa-felicitation-for-the-oncoming-2026-batch!/",
+        "teaser": null
       }]
