@@ -1,366 +1,157 @@
+<!--In the name of Allah, the most Merciful, the most Gracious-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IMSA — International Medical Students Association</title>
-<style>
-  :root{
-    --navy-dark:#0a1f44;
-    --navy:#12285c;
-    --navy-light:#1c3a7a;
-    --blue-accent:#a9c9e8;
-    --cream:#f7f2e6;
-    --white:#ffffff;
-    --text-light:#dbe6f5;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-    background:var(--cream);
-    color:var(--navy-dark);
-    line-height:1.6;
-  }
-  a{text-decoration:none;color:inherit;}
-
-  /* NAVBAR */
-  header{
-    background:var(--navy-dark);
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.3);
-  }
-  .navbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0.7rem 1rem;
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:0.6rem;
-  }
-  .brand svg{width:42px;height:42px;}
-  .brand-name{
-    color:var(--white);
-    font-weight:700;
-    font-size:1.1rem;
-    letter-spacing:0.5px;
-  }
-  .hamburger{
-    background:none;
-    border:none;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-    padding:6px;
-  }
-  .hamburger span{
-    display:block;
-    width:26px;
-    height:3px;
-    background:var(--blue-accent);
-    border-radius:2px;
-    transition:0.3s;
-  }
-  .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-  .hamburger.active span:nth-child(2){opacity:0;}
-  .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
-
-  .nav-links{
-    list-style:none;
-    max-height:0;
-    overflow:hidden;
-    background:var(--navy);
-    transition:max-height 0.35s ease;
-    width:100%;
-  }
-  .nav-links.open{max-height:400px;}
-  .nav-links li{border-top:1px solid rgba(255,255,255,0.08);}
-  .nav-links a{
-    display:block;
-    padding:0.9rem 1.3rem;
-    color:var(--text-light);
-    font-weight:500;
-    transition:background 0.2s, color 0.2s;
-  }
-  .nav-links a:hover{
-    background:var(--navy-light);
-    color:var(--white);
-  }
-
-  /* Desktop nav */
-  @media(min-width:768px){
-    .hamburger{display:none;}
-    .nav-links{
-      max-height:none;
-      display:flex;
-      width:auto;
-      background:transparent;
-    }
-    .nav-links li{border-top:none;}
-    .nav-links a{padding:0.5rem 1rem;}
-    .navbar{padding:0.8rem 2rem;}
-  }
-
-  /* HERO / VISION */
-  .vision{
-    background:linear-gradient(160deg,var(--navy-dark),var(--navy));
-    color:var(--text-light);
-    padding:2.5rem 1.3rem;
-    text-align:center;
-  }
-  .vision svg{width:90px;height:90px;margin-bottom:1rem;}
-  .vision h1{
-    color:var(--white);
-    font-size:1.5rem;
-    margin-bottom:0.8rem;
-  }
-  .vision p{
-    max-width:600px;
-    margin:0 auto;
-    color:var(--blue-accent);
-    font-size:0.98rem;
-  }
-  .vision .signature{
-    margin-top:1.2rem;
-    font-style:italic;
-    color:var(--white);
-    font-size:0.9rem;
-  }
-
-  section{padding:2.2rem 1.2rem;}
-  .section-title{
-    text-align:center;
-    color:var(--navy-dark);
-    font-size:1.35rem;
-    margin-bottom:1.5rem;
-    position:relative;
-  }
-  .section-title::after{
-    content:'';
-    display:block;
-    width:50px;
-    height:3px;
-    background:var(--navy-light);
-    margin:0.5rem auto 0;
-    border-radius:2px;
-  }
-
-  /* ACTIVITIES */
-  .activities-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:1.1rem;
-    max-width:1000px;
-    margin:0 auto;
-  }
-  @media(min-width:600px){
-    .activities-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media(min-width:1000px){
-    .activities-grid{grid-template-columns:repeat(4,1fr);}
-  }
-  .activity-card{
-    background:var(--white);
-    border-radius:14px;
-    padding:1.4rem 1.1rem;
-    text-align:center;box-shadow:0 4px 14px rgba(10,31,68,0.1);
-    border-top:4px solid var(--navy);
-    transition:transform 0.25s, box-shadow 0.25s;
-  }
-  .activity-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 20px rgba(10,31,68,0.18);
-  }
-  .activity-card .icon{
-    font-size:2rem;
-    margin-bottom:0.6rem;
-  }
-  .activity-card h3{
-    color:var(--navy-dark);
-    font-size:1.05rem;
-    margin-bottom:0.5rem;
-  }
-  .activity-card p{
-    font-size:0.88rem;
-    color:#3d4a63;
-  }
-
-  /* FEEDBACK */
-  .feedback-section{background:var(--navy-dark);}
-  .feedback-section .section-title{color:var(--white);}
-  .feedback-section .section-title::after{background:var(--blue-accent);}
-  .feedback-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:1rem;
-    max-width:1000px;
-    margin:0 auto;
-  }
-  @media(min-width:600px){
-    .feedback-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media(min-width:1000px){
-    .feedback-grid{grid-template-columns:repeat(3,1fr);}
-  }
-  .feedback-card{
-    background:var(--navy);
-    color:var(--text-light);
-    border-radius:14px;
-    padding:1.2rem;
-    border-left:4px solid var(--blue-accent);
-  }
-  .feedback-card p.quote{
-    font-size:0.92rem;
-    margin-bottom:0.8rem;
-    color:var(--cream);
-  }
-  .feedback-card .who{
-    display:flex;
-    align-items:center;
-    gap:0.6rem;
-  }
-  .avatar{
-    width:36px;height:36px;
-    border-radius:50%;
-    background:var(--blue-accent);
-    color:var(--navy-dark);
-    display:flex;align-items:center;justify-content:center;
-    font-weight:700;
-    font-size:0.9rem;
-  }
-  .who .name{font-weight:600;color:var(--white);font-size:0.9rem;}
-  .who .role{font-size:0.78rem;color:var(--blue-accent);}
-
-  footer{
-    background:var(--navy-dark);
-    color:var(--blue-accent);
-    text-align:center;
-    padding:1.3rem;
-    font-size:0.82rem;
-  }
-</style>
-<link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMSA &mdash; Home</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/logo128x.png">
+  <link rel="stylesheet" href="/assets/css/home.css">
 </head>
-<body>
 
-<header>
-  <nav class="navbar">
-    <div class="brand">
-      <img src="/assets/images/logo128x.png" width="32px">
-      <span class="brand-name">IMSA</span>
-    </div>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="/">Home</a></li>
-    <li><a href="/announcements/">Announcements</a></li>
-    <li><a href="/events/">Events</a></li>
-    <li><a href="/cadre/">Cadre</a></li>
-    <li><a href="/resources/">Resources</a></li>
-    <li><a href="/join/">Join Us</a></li>
-  </ul>
-</header>
+<body data-pack="personal">
 
-<section class="vision" id="home">
-  <img src="/assets/images/logo128x.png" width="128px">
-  <h1>Founder's Vision</h1>
-  <p>Guided by faith, driven by service.<br>IMSA was founded on the belief that medical students grow best when they support one another — through mentorship in academics, a strong sense of community, and a shared commitment to service. Our vision is to build a space where every student feels guided, heard, and inspired to become not just better doctors, but better human beings.</p>
-  <p class="signature">— the Founding Team, IMSA</p>
-</section>
-<section id="events">
-  <h2 class="section-title">What We Do</h2>
-  <div class="activities-grid">
-    <div class="activity-card">
-      <div class="icon">🩺</div>
-      <h3>MBBS Guidance</h3>
-      <p>Peer mentorship, exam strategy, and senior-junior guidance for navigating the MBBS journey.</p>
+  <header class="top top--trans">
+    <div class="wrap bannerina">
+      <a class="brand" href="#top" style="text-shadow: 30px black;">IMSA <span></span></a>
+      <div class="top-right">
+        <a class="btn tbook" href="/join/">Join us now</a>
+      </div>
+      <a class="btn" href="/Announcements/">Announcements</a>
+      <a class="btn" href="/events/">Events</a>
     </div>
-    <div class="activity-card">
-      <div class="icon">🤝</div>
-      <h3>Group Activities</h3>
-      <p>Workshops, study circles, and team-building sessions that keep the community connected.</p>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-img">
+      <img src="/assets/images/posts/backky.jpg" fetchpriority="high" style="mask-image: linear-gradient(to right, rgba(0,0,0,0.2) 25%,rgba(20,20,20,0.90) 100%);
+  ">
     </div>
-    <div class="activity-card">
-      <div class="icon">🗳️</div>
-      <h3>Elections</h3>
-      <p>Transparent, student-led elections to choose the next generation of club leadership.</p>
+    <div class="wrap">
+      <img src="/assets/images/logo128x.png" style="width: 64px; display: inline; filter:grayscale();"><br>
+      <span class="lbl fraunces">Initative of Medicos for Service and Academics</span>
+      <h1>Guided by <em>faith</em>,<br>Driven by <em>service</em></h1>
+      <p class="h-sub">Where medicine meets faith and service<br>A Muslim medical student organisation, where we try our
+        best to serve the mankind and its
+        creator.</p>
+      <div class="h-cta">
+        <a class="btn hghost" href="#whatwedo"> Learn what we do</a>
+        <a class="btn hb" href="/join/">Join us</a>
+      </div>
     </div>
-    <div class="activity-card">
-      <div class="icon">❤️</div>
-      <h3>Charity Visits</h3>
-      <p>Regular visits to shelters, hospitals, and community camps to give back where it matters.</p>
+  </section>
+
+  <section class="svc" id="whatwedo">
+    <div class="wrap">
+      <div>
+        <h2>What we do, and what why it matters</h2>
+        <p class="svc-lede">We arrange guidance sessions, teach one-another, go one charity drives, and make the best of
+          our medical journey.</p>
+        <p>We are a non-profit initiative taken by Muslim medicos from all over the Telangana with an aim to create a
+          unified platform for muslim medical studnts, working towards self-improvement and upliftment of the soceity
+          under the divine light and guidance of Islam.</p>
+      </div>
+      <div class="svc-fig arch" id="svcFig" data-dolly="fade">
+        <img id="f-cut" class="on" src="/assets/images/posts/brailleday.jpeg"
+          alt="Scissors mid-cut through a straight section of hair">
+      </div>
     </div>
+  </section>
+
+
+  <section class="quote">
+    <p class="pg-close-label">A word from our founders</p>
+    <div class="wrap">
+      <p id="quotation" class="qb reveal"> What began as a journey I never really planned became one of the most
+        meaningful parts of my life ٱلْحَمْدُ لِلَّٰه <br> Allah brought me into IMSA with a vision to please Him,
+        strengthen our Iman and use our profession to serve the community. Along the way IMSA became a journey of
+        personal growth for me. Through teamwork, social service and responsibilities I learnt to communicate better,
+        organise myself, lead and recognise my own shortcomings. It also strengthened me academically and gave me
+        opportunities to help fellow medicos grow in their academics, skills and confidence. More importantly it taught
+        me to carry compassion, ethics and a sense of responsibility into my profession. To everyone who becomes part of
+        IMSA, Don't lose this opportunity, Serve wholeheartedly, uplift others and leave the place better than you found
+        it The greatest mark of leadership is not how far you go but how far others go because of you. I hope IMSA
+        continues to be a place where people grow, serve and inspire one another for the sake of Allah ان شاء الله</p>
+      <p class="qs" id="author">Fariha di</p>
+    </div>
+  </section>
+
+  <p class="pg-close-label">Recent work on ground</p>
+  <div class="pg-close" aria-label="Recent work">
+    <a href="#book"><img src="/assets/images/posts/blanket.jpeg" loading="lazy"> Blanket drive</a>
+    <a href="#book"><img src="/assets/images/posts/merajbhaiii.jpeg" loading="lazy"></a>
+    <a href="#book"><img src="/assets/images/posts/homecpr.jpeg" loading="lazy"></a>
+    <a href="#book"><img src="/assets/images/childrenschool.jpeg" loading="lazy"></a>
   </div>
-</section>
 
-<section class="feedback-section" id="care">
-  <h2 class="section-title">What Our Members Say</h2>
-  <div class="feedback-grid">
-    <div class="feedback-card">
-      <p class="quote">"IMSA's mentorship program genuinely helped me survive my first professional year. The seniors actually care."</p>
-      <div class="who">
-        <div class="avatar">A</div>
-        <div><div class="name">Aisha R.</div><div class="role">2nd Year, MBBS</div></div>
+  <section class="masonry">
+    <p class="pg-close-label">Our recent posters, designed by our Creative Team</p>
+    <div class="wrap">
+
+      <div id="masonry">
+        <img src="/assets/images/poster1.jpeg" alt="" class="yoho"><img src="/assets/images/poster2.PNG" alt=""><img
+          src="/assets/images/poster3.PNG" alt=""><img src="/assets/images/poster12.jpeg" alt=""><img
+          src="/assets/images/poster4.PNG" alt=""><img src="/assets/images/poster13.jpeg" alt=""><img
+          src="/assets/images/poster5.PNG" alt=""><img src="/assets/images/poster14.jpeg" alt=""><img
+          src="/assets/images/poster6.jpeg" alt=""><img src="/assets/images/poster15.jpeg" alt=""><img
+          src="/assets/images/poster7.PNG" alt=""><img src="/assets/images/poster16.jpeg" alt=""><img
+          src="/assets/images/poster8.jpeg" alt=""><img src="/assets/images/poster17.jpeg" alt=""><img
+          src="/assets/images/poster9.jpeg" alt=""><img src="/assets/images/poster18.jpeg" alt=""><img
+          src="/assets/images/poster10.jpeg" alt=""><img src="/assets/images/poster19.jpeg" alt=""><img
+          src="/assets/images/poster11.jpeg" alt=""><img src="/assets/images/poster20.jpeg" alt="">
       </div>
     </div>
-    <div class="feedback-card">
-      <p class="quote">"The charity visits changed how I see medicine. It's not just about textbooks anymore."</p>
-      <div class="who">
-        <div class="avatar">R</div>
-        <div><div class="name">Rohan K.</div><div class="role">Final Year, MBBS</div></div>
+  </section>
+
+  <section class="roomshot">
+    <div class="wrap">
+      <div class="ph">
+        <figure>
+          <img src="/assets/images/posts/bannerina.jpg"
+            style="border-radius: 16px; height:100%; object-position: bottom; margin-bottom: 0.7rem;" loading="lazy">
+          <figcaption>
+            IMSA members at a recent event at a school for children with different abilities.<br>
+            It was a great learning experience meeting these innocent souls, and we did several art and other
+            interactive activities with them. All praise be to our Lord.
+          </figcaption>
+        </figure>
       </div>
     </div>
-    <div class="feedback-card">
-      <p class="quote">"Being part of the elections committee taught me leadership skills no lecture ever could."</p>
-      <div class="who">
-        <div class="avatar">S</div>
-        <div><div class="name">Sneha P.</div><div class="role">3rd Year, MBBS</div></div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <p class="fbrand">IMSA <img src="/assets/images/logo128x.png"
+              style="width: 2.2rem; display: inline; filter: grayscale();"></p>
+          <p class="fabout">A Muslim medical student organisation, combining the deen and dunya</p>
+          <p class="fcontact"><b>Hyderabad, TG. India</b><br>
+            <a href="mailto:initiative.msa@gmail.com">initiative.msa@gmail.com</a><br>
+            <a href="http://localhost:4000/join/www.youtube.com/@IMSAOfficial99" _target="_blank">IMSA on
+              YouTube</a><br>
+            <a href="https://www.linkedin.com/company/imsa-initiative-of-medicos-for-service-and-academics"
+              target="_blank" rel="noopener">IMSA on LinkedIn</a>
+          </p>
+        </div>
+        <div>
+          <h4>Statistics</h4>
+          <ul class="fhours">
+            <li><span>Events</span><span>52</span></li>
+            <li><span>Members</span><span>430</span></li>
+            <li><span>Inititatives</span><span>7</span></li>
+            <li><span>Achievements</span><span>6</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <span>&copy; IMSA 2026</span>
+        <span> Made by Technical Team, of IMSA </span>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="resources">
-  <h2 class="section-title">Resources</h2>
-  <p style="text-align:center;max-width:600px;margin:0 auto;color:#3d4a63;">Curated notes, past papers, and USMLE/university exam prep material shared by seniors — coming soon.</p>
-</section>
-
-<section id="announcements" style="background:var(--white);">
-  <h2 class="section-title">Announcements</h2>
-  <p style="text-align:center;max-width:600px;margin:0 auto;color:#3d4a63;">Stay tuned here for the latest club updates, event dates, and important notices.</p>
-</section>
-
-<section id="join" style="text-align:center;">
-  <h2 class="section-title">Join Us</h2>
-  <p style="max-width:500px;margin:0 auto 1.2rem;color:#3d4a63;">Become a part of a community that supports you academically, emotionally, and professionally.</p>
-  <a href="#" style="display:inline-block;background:var(--navy-dark);color:var(--white);padding:0.8rem 1.8rem;border-radius:30px;font-weight:600;">Become a Member</a>
-</section>
-
-<footer>
-  &copy; 2026 IMSA — International Medical Students Association. All rights reserved.
-</footer>
-
-<script>
-  const btn = document.getElementById('hamburgerBtn');
-  const links = document.getElementById('navLinks');
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('active');
-    links.classList.toggle('open');
-  });
-  links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      btn.classList.remove('active');
-      links.classList.remove('open');
-    });
-  });
-</script>
-
+  </footer>
+  <script src="/assets/js/home.js"></script>
 </body>
+
 </html>

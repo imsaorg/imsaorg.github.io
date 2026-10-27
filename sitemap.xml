@@ -153,13 +153,14 @@
 <lastmod>2026-10-20T00:00:00+05:30</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/newsletter-released/</loc>
+<lastmod>2026-10-28T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/felicitation/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/oldalternate/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/alternate/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/announcements/</loc>
@@ -181,6 +182,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
-<lastmod>2026-09-23T01:21:00+05:30</lastmod>
+<lastmod>2026-10-28T05:17:14+05:30</lastmod>
 </url>
 </urlset>
