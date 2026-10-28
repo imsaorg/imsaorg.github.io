@@ -42,7 +42,7 @@
   --gap:clamp(18px,4.2vw,56px);
   --r-media:10px;
 }
-body[data-pack="personal"]{--ground:#E6DFD7;--ground2:#DACFC2;--raise:#F0EAE3;--ink:#2E211A;--body:#4C3B2F;
+:root {--ground:#E6DFD7;--ground2:#DACFC2;--raise:#F0EAE3;--ink:#2E211A;--body:#4C3B2F;
   --quiet:#6E5A48;--accent:#8A3A1E;--rule:rgba(46,33,26,.24);--panel:#302016;--panel-ink:#F2E9DE;
   --panel-dim:#B9A48F;--accent-on-panel:#DE9E6C;--cta:#2E211A;--cta-ink:#F2E9DE}
 /* ---------- base ---------- */
@@ -463,4 +463,22 @@ a[href*="mikesmithdesign.co.uk"]{text-decoration:underline;text-underline-offset
   display: block;
   margin-bottom: 1em;
   border-radius: 16px;;
+}
+
+p.indent {
+  text-indent: 4rem;
+}
+
+#quotation p{
+  margin-top: 1rem;
+}
+
+#quotation:first-child::first-letter{
+  float: left;
+  font-family: var(--disp);
+  font-size: 5.5rem;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
 }
