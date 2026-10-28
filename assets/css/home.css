@@ -87,7 +87,7 @@ body[data-pack="walnut"] .chip.on .led{background:#8FC98B}
 .chip.off .led{background:var(--accent)}
 
 /* ---------- header ---------- */
-.top{position:sticky;top:0;z-index:80;background:var(--ground);
+.top{position:sticky;top:0;z-index:80;
   border-bottom:1px solid var(--rule);transition:background .35s,border-color .35s,backdrop-filter .35s}
 /* transparent-over-hero mode (home page only, .top--trans added in HTML) */
 .top.top--trans{background:transparent;border-bottom-color:transparent;
@@ -101,7 +101,7 @@ body[data-pack="walnut"] .chip.on .led{background:#8FC98B}
 .top.top--trans .btn.tbook{background:#FBF3E8;border-color:#FBF3E8;color:#33221A}
 .top.top--trans .burger span{background:#FBF3E8}
 /* solidified on scroll (JS adds .scrolled) */
-.top.top--trans.scrolled{background:var(--ground);border-bottom-color:var(--rule);
+.top.top--trans.scrolled{border-bottom-color:var(--rule);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .top.top--trans.scrolled .brand,.top.top--trans.scrolled .nav a{color:var(--ink)}
 .top.top--trans.scrolled .brand span{color:var(--quiet)}
@@ -119,7 +119,7 @@ body[data-pack="walnut"] .chip.on .led{background:#8FC98B}
 .nav a:hover{color:var(--ink)}
 .nav a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}
 .top-right{display:flex;align-items:center;gap:14px}
-.top .btn{padding:12px 22px;font-size:11.5px}
+.top .btn{padding:12px 15px;font-size:11.5px}
 @media(max-width:1080px){.nav{display:none}}
 @media(max-width:640px){.top .chip{display:none}.top .btn.tbook{display:none}}
 .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:10px 4px}
@@ -195,7 +195,7 @@ body[data-pack="walnut"] .chip.on .led{background:#8FC98B}
 
 /* ---------- home : quote ---------- */
 .quote{background:var(--ground2)}
-.quote .wrap{max-width:900px;height:100dvh ;padding-top:clamp(64px,8vw,120px);padding-bottom:clamp(64px,8vw,120px)}
+.quote .wrap{max-width:900px;height:100dvh ;padding-top:clamp(24px,4vw,120px);padding-bottom:clamp(64px,8vw,120px)}
 .quote .qb{font-family:var(--disp);font-weight:400;font-size:clamp(12px,3vw,18px);line-height:1.3;letter-spacing:0;color:var(--ink)}
 .quote .qb em{font-style:italic;font-weight:400;color:var(--accent); float: right;}
 .quote .qs{font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--body);margin-top:22px}
@@ -452,7 +452,7 @@ a[href*="mikesmithdesign.co.uk"]{text-decoration:underline;text-underline-offset
 #masonry {
   width: min(1000px, 100%);
   margin: 0 auto;
-  columns: 4 200px;
+  columns: 3 auto;
   column-gap: 1em;
   margin-bottom: 5rem;
 }
