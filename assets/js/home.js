@@ -40,7 +40,7 @@ document.querySelectorAll('.hgroup').forEach(g => {
 (function () {
   const topEl = document.querySelector('.top.top--trans');
   if (!topEl) return;
-  const solidify = () => topEl.classList.toggle('scrolled', window.scrollY > 58);
+  const solidify = () => topEl.classList.toggle('scrolled', window.scrollY > 600);
   window.addEventListener('scroll', solidify, { passive: true });
   solidify();
 })();
@@ -84,7 +84,7 @@ var tableofquotes = [
   { namm: "Sania di", quote: "Coming from a circle that didn't share my beliefs, I found my home in IMSA. Here were people who understood me and stood by me even when I stumbled. It became a safe space where I could express how I felt and leave with answers to the chaos. IMSA is where deen and dunya became one, not two separate worlds. My vision has always been simple: to strive for excellence without ever compromising our Islamic boundaries, and to pursue being our best without losing who we are." },
   { namm: "Fariha di", quote: "What began as a journey I never really planned became one of the most meaningful parts of my life  ٱلْحَمْدُ لِلَّٰه <br> Allah brought me into IMSA with a vision to please Him, strengthen our Iman and use our profession to serve the community. Along the way IMSA became a journey of personal growth for me. Through teamwork, social service and responsibilities I learnt to communicate better, organise myself, lead and recognise my own shortcomings. It also strengthened me academically and gave me opportunities to help fellow medicos grow in their academics, skills and confidence. More importantly it taught me to carry compassion, ethics and a sense of responsibility into my profession. To everyone who becomes part of IMSA, Don't lose this opportunity, Serve wholeheartedly, uplift others and leave the place better than you found it The greatest mark of leadership is not how far you go but how far others go because of you. I hope IMSA continues to be a place where people grow, serve and inspire one another for the sake of Allah ان شاء الله" },
 ]
-var qoutecounter = 3;
+var qoutecounter = 1;
 function changeQuotes() {
   document.getElementById("quotation").innerHTML = tableofquotes[qoutecounter - 1].quote;
   document.getElementById("author").innerHTML = tableofquotes[qoutecounter - 1].namm;
