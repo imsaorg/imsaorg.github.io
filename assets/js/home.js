@@ -93,4 +93,4 @@ function changeQuotes() {
 }
 changeQuotes()
 
-setInterval(changeQuotes, 5000);
+setInterval(changeQuotes, 6500);
